@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Bangers', cursive;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05); /* fondo sin color pero con opacidad */
+  backdrop-filter: blur(5px); /* efecto difuminado */
+  color: #fff;
+}
+
+.quiz-container {
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  background: rgba(0,0,0,0.6); /* fondo semi-transparente */
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff4444;
+  text-shadow: 2px 2px 0 #000;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ffee00;
+  text-shadow: 1px 1px 0 #000;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Bangers', cursive;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff3333;
+  color: white;
+  text-shadow: 1px 1px #000;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255,0,0,0.7);
+}
+
+#next-btn {
+  background-color: #00ccff;
+  margin-top: 20px;
+}
+
+#next-btn:hover {
+  box-shadow: 0 0 15px rgba(0,200,255,0.7);
+}
+
+#result-container {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: #ffee00;
+  text-shadow: 1px 1px #000;
+}
+
+button:focus {
+  outline: none;
+}

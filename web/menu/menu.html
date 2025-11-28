@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Spider-Verse Menu</title>
+    <link rel="stylesheet" href="menu.css">
+
+    <style>
+        /* Estilos para los botones sobre el iframe */
+        .iframe-buttons {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .iframe-buttons button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: rgba(255,0,0,0.8);
+            color: #fff;
+            font-family: 'Bangers', cursive;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .iframe-buttons button:hover {
+            background-color: rgba(255,0,0,1);
+        }
+
+        /* Asegura que el main ocupe la altura completa */
+        main#mainContent {
+            height: 100vh;
+        }
+
+        main#mainContent iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="../img/ara.png" alt="Spider-Man Logo">
+        </div>
+
+        <ul class="menu-items">
+            <li><a href="frames/inicio.html" class="menu-link" target="mainFrame">Inicio</a></li>
+            <li><a href="frames/mapa/mapa.html" class="menu-link" target="mainFrame">Mapa</a></li>
+            <li><a href="frames/test/test.html" class="menu-link" target="mainFrame">Test</a></li>
+            <li><a href="frames/galeria/galeria.html" class="menu-link" target="mainFrame">Galería</a></li>
+        </ul>
+
+        <button class="toggle-btn" id="toggleBtn">☰</button>
+    </aside>
+
+    <!-- Main con iframe y botones flotantes -->
+    <main id="mainContent">
+        <div class="iframe-buttons" aria-hidden="false">
+            <button id="closeBtn" title="Colapsar barra">✖</button>
+            <button id="musicBtn" title="Control de música">🔊</button>
+        </div>
+
+        <iframe name="mainFrame" src="frames/inicio.html"></iframe>
+        <audio id="bgMusic" src="musica/musica.mp3" loop></audio>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Seguridad: comprobar existencia de elementos antes de añadir listeners
+        (function () {
+            const closeBtn = document.getElementById('closeBtn');
+            const musicBtn = document.getElementById('musicBtn');
+
+            if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+        // Reemplaza la URL actual en el historial
+        window.location.replace('../index.html');
+    });
+}
+
+            let musicPlaying = true;
+           window.addEventListener('load', () => {
+    bgMusic.play().catch(() => {
+        // Si el navegador bloquea la reproducción automática, desactiva la variable
+        musicPlaying = false;
+        if (musicBtn) musicBtn.textContent = '🔇';
+    });
+});
+
+// Botón para silenciar o activar
+if (musicBtn) {
+    musicBtn.addEventListener('click', () => {
+        musicPlaying = !musicPlaying;
+
+        if (musicPlaying) {
+            bgMusic.play();           // Reproduce la música
+            musicBtn.textContent = '🔊';
+        } else {
+            bgMusic.pause();          // Pausa la música
+            musicBtn.textContent = '🔇';
+        }
+    });
+}
+
+        })();
+    </script>
+
+    <script src="menu.js"></script>
+</body>
+</html>

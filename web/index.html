@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenida</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- PORTADA + LOGIN -->
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="login-title">Bienvenida</h1>
+            <p class="login-sub">Ingresa para entrar a nuestro pequeño universo</p>
+
+            <div class="input-group">
+                <input type="text" id="usuario" placeholder="Usuario" />
+            </div>
+
+            <div class="input-group password-group">
+                <input type="password" id="password" placeholder="Contraseña" />
+                <img src="img/ojito.png" class="toggle-pass" id="togglePassword">
+            </div>
+
+            <button id="loginBtn">Entrar</button>
+
+            <p id="errorMsg" class="error"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

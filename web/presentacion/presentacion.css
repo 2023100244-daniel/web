@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Arial", sans-serif;
+}
+
+/* FONDO */
+.fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+.fondo video {
+    height: 100vh;          /* Mantiene la altura, no se deforma */
+    width: auto;            /* El ancho se ajusta automáticamente */
+    object-fit: cover;      /* Rellena el fondo recortando si es necesario */
+    filter: brightness(1.15);
+}
+
+
+
+#botones-container {
+    position: absolute;
+    bottom: 60px;           /* distancia desde abajo */
+    left: 50%;              /* centro horizontal */
+    transform: translateX(-50%); /* centra exactamente */
+    display: flex;          /* coloca los hijos en fila */
+    gap: 20px;              /* espacio entre los botones */
+    align-items: center;    /* alinea verticalmente si tienen distinto tamaño */
+}
+
+/* Botón audio */
+#btn-audio {
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+#btn-audio img {
+    width: 40px;
+    height: 40px;
+    filter: invert(1);
+}
+
+#btn-audio:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Botón continuar */
+#continuar {
+    opacity: 0;               /* invisible al inicio */
+    pointer-events: none;     /* no se puede clickear */
+    transform: translateY(20px); 
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #e50914;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 1s, transform 1s; /* animación suave */
+}
+
+#continuar:hover {
+    background: #ff1e24;
+    transform: translateY(0) scale(1.05);
+}
+
+/* Clase que se activa después de 30s */
+#continuar.visible {
+    opacity: 1;              /* aparece */
+    transform: translateY(0); 
+    pointer-events: auto;    /* ahora se puede clickear */
+}
+

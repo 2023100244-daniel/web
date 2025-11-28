@@ -1,0 +1,181 @@
+/* Fuente estilo cómic */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+:root{
+    --spidey-red: #e21f2b;
+    --spidey-blue: #0b5bb8;
+    --dark-bg: #0f172a;
+    --panel-bg: #0b1120;
+    --card-bg: #16223a;
+}
+
+body, html {
+    height:100%;
+    margin:0;
+    background:var(--dark-bg);
+    color:#e6eef8;
+    font-family: 'Bangers', cursive; /* Aplique global */
+    letter-spacing: 1px;
+}
+
+.app {
+    display:flex;
+    height:100vh;
+}
+
+#map {
+    flex:1;
+    filter: saturate(1.2) contrast(1.1);
+}
+
+.panel {
+    width:300px;
+    background:var(--panel-bg);
+    padding:14px;
+    overflow:auto;
+    border-right:3px solid var(--spidey-red);
+    box-shadow: 0 0 12px rgba(255,0,0,0.3);
+}
+
+h1 {
+    margin:5px 0 12px;
+    color:var(--spidey-red);
+    font-size:28px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.lead {
+    font-size:15px;
+    margin-bottom:10px;
+    color:#cce0ff;
+    font-family: Arial;
+}
+
+.controls {
+    display:flex;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+button {
+    flex:1;
+    padding:9px;
+    background:var(--spidey-blue);
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    color:white;
+    font-weight:bold;
+    font-family: 'Bangers', cursive;
+    font-size:16px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 0 #000;
+    border:2px solid #000;
+    transition:.15s;
+    box-shadow: 2px 2px 0 #000;
+}
+
+button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+button.secondary {
+    background:#1a253d;
+    border:2px solid #2e3a55;
+}
+
+.hint {
+    font-family: Arial;
+    font-size:13px;
+    color:#c9d9ffb2;
+    margin-bottom:10px;
+}
+
+.list {
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.item {
+    background:var(--card-bg);
+    padding:10px;
+    border-radius:6px;
+    cursor:pointer;
+    border:2px solid #000;
+    box-shadow: 3px 3px 0 #000;
+    transition:.15s;
+}
+
+.item:hover {
+    transform: scale(1.03);
+    background:#1b2d4e;
+}
+
+.item h3 {
+    margin:0;
+    color:var(--spidey-red);
+    font-size:20px;
+    text-shadow: 1px 1px 0 #000;
+    display:flex;
+    align-items:center;
+}
+
+.item small {
+    font-size:12px;
+    color:#b3cfff;
+    font-family: Arial;
+}
+
+.tag {
+    background:var(--spidey-red);
+    color:white;
+    padding:2px 6px;
+    font-size:10px;
+    border-radius:6px;
+    margin-left:8px;
+    border:1px solid #000;
+}
+
+.popup-card {
+    min-width:200px;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+}
+
+.popup-card h4 {
+    margin:0 0 4px;
+    color:var(--spidey-red);
+    font-size:20px;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.popup-card p {
+    margin:0;
+    font-family: Arial;
+    color:#dbe6ff;
+    font-size:13px;
+}
+
+.popup-actions {
+    display:flex;
+    gap:6px;
+    margin-top:6px;
+}
+
+.popup-actions button {
+    flex:1;
+    padding:6px;
+    border:2px solid #000 !important;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:13px;
+    font-family: 'Bangers', cursive;
+    text-shadow: 1px 1px 0 #000;
+    letter-spacing: 1px;
+    box-shadow:2px 2px 0 #000;
+}
+
+.btn-del { background:#ff4a4a; color:white; }
+.btn-edit { background:#ffe169; color:black; }

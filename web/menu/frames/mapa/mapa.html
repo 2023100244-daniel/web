@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mapa NYC — Recuerdos</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" 
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="mapa.css">
+</head>
+
+<body>
+    
+    <div class="app">
+        <div class="panel">
+            <h1>Mapa — Recuerdos (NYC)</h1>
+            <p class="lead">Marca lugares importantes y escribe un recuerdo.</p>
+
+            <div class="controls">
+                <button id="addMemoryBtn">➕ Agregar recuerdo</button>
+                <button id="resetBtn" class="secondary">♻️ Reset</button>
+            </div>
+
+            <div class="hint" id="hint">
+                Haz clic en "Agregar recuerdo" y luego en el mapa para colocar un marcador.
+            </div>
+
+            <div class="list" id="list"></div>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Main script -->
+    <script src="mapa.js"></script>
+</body>
+</html>
